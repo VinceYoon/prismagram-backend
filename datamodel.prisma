@@ -1,0 +1,76 @@
+type User {
+  id: ID! @id
+  avatar: String
+    @default(
+      value: "data:image/png;base64,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"
+    )
+  username: String! @unique
+  email: String! @unique
+  firstName: String @default(value: "")
+  lastName: String
+  bio: String
+  following: [User!]! @relation(name: "FollowRelation")
+  followers: [User!]! @relation(name: "FollowRelation")
+  posts: [Post!]! @relation(name: "PostsOfUser", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesOfUser", onDelete: CASCADE)
+  comments: [Comment!]! @relation(name: "CommentsOfUser", onDelete: CASCADE)
+  rooms: [Room!]!
+  loginSecret: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Post{
+  id: ID! @id
+  location: String
+  caption: String!
+  user: User @relation(name: "PostsOfUser")
+  files: [File!]! @relation(name: "FilesOfPost", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikeOfPost", onDelete: CASCADE)
+  comments: [Comment!]! @relation(name: "CommentOfPost", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Like{
+  id: ID! @id
+  user: User @relation(name: "LikesOfUser")
+  post: Post @relation(name: "LikeOfPost")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Comment{
+  id: ID! @id
+  text: String!
+  user: User @relation(name: "CommentsOfUser")
+  post: Post @relation(name: "CommentOfPost")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type File{
+  id: ID! @id
+  url: String!
+  post: Post @relation(name: "FilesOfPost")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Room {
+  id: ID! @id
+  participants: [User!]!
+  messages: [Message!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Message{
+  id: ID! @id
+  text: String!
+  from: User! @relation(name: "From")
+  to: User! @relation(name: "To")
+  room: Room!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
